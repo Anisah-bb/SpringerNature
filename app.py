@@ -18,10 +18,10 @@ class Texts(BaseModel):
     text_2: str
     
 class TextResponse(BaseModel):
-    textresponse: list
+    textresponse: str
     
 class TextsResponse(BaseModel):
-    textsresponse: float
+    textsresponse: str
     
     
 # Create FastAPI endpoints here
