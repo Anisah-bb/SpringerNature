@@ -17,11 +17,11 @@ class Texts(BaseModel):
     text_1: str
     text_2: str
     
-# class TextResponse(BaseModel):
-#     textresponse: list
+class TextResponse(BaseModel):
+    textresponse: list
     
-# class TextsResponse(BaseModel):
-#     textsresponse: float
+class TextsResponse(BaseModel):
+    textsresponse: float
     
     
 # Create FastAPI endpoints here
@@ -33,9 +33,9 @@ def get_embs(text: str):
     return {"Text Embeding for {} is {}".format(text, embedding)}
 
 @app.post("/compare")
-def get_sim_score(texts: Texts):
-    sim_score = handler.similarity(texts.text_1, texts.text_2)
-    return {'Similarity Score for {} and {} is {}'.format(texts.text_1, texts.text_2, sim_score)}
+def get_sim_score(text_1: str, text_2: str):
+    sim_score = handler.similarity(text_1, text_2)
+    return {'Similarity Score for {} and {} is {}'.format(text_1, text_2, sim_score)}
     
 
 
